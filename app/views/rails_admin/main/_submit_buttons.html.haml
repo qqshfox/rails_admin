@@ -5,6 +5,10 @@
     = t("admin.form.save")
   %span.extra_buttons
     - if authorized? :new, @abstract_model
+      %button.btn.btn-info{:type => "submit", :name => "_add_copy", :'data-disable-with' => t("admin.form.save_and_copy")}
+        = t("admin.form.save_and_copy")
+      %button.btn.btn-info{:type => "submit", :name => "_add_inherit", :'data-disable-with' => t("admin.form.save_and_inherit")}
+        = t("admin.form.save_and_inherit")
       %button.btn.btn-info{:type => "submit", :name => "_add_another", :'data-disable-with' => t("admin.form.save_and_add_another")}
         = t("admin.form.save_and_add_another")
     - if authorized? :edit, @abstract_model
